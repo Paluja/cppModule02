@@ -6,55 +6,55 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:20:30 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/12/14 16:32:40 by pjimenez         ###   ########.fr       */
+/*   Updated: 2025/04/04 13:11:17 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "Fixed.hpp"
 #include <iostream>
+#include "Fixed.hpp"  // Asegúrate de que este sea el nombre correcto
 
-int main( void ) {
-    Fixed a;
-    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-    
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << Fixed::max( a, b ) << std::endl;
+int main() {
+    Fixed a(5.5f);
+    Fixed b(2);
+
+    std::cout << "Operaciones Aritméticas:" << std::endl;
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+    std::cout << "a + b = " << (a + b) << std::endl;
+    std::cout << "a - b = " << (a - b) << std::endl;
+    std::cout << "a * b = " << (a * b) << std::endl;
+    std::cout << "a / b = " << (a / b) << std::endl;
+
+    std::cout << "\nComparaciones:" << std::endl;
+    std::cout << "a < b: " << (a < b) << std::endl;
+    std::cout << "a > b: " << (a > b) << std::endl;
+    std::cout << "a <= b: " << (a <= b) << std::endl;
+    std::cout << "a >= b: " << (a >= b) << std::endl;
+    std::cout << "a == b: " << (a == b) << std::endl;
+    std::cout << "a != b: " << (a != b) << std::endl;
+
+    std::cout << "\nIncremento / Decremento:" << std::endl;
+    Fixed c = a;
+    std::cout << "c = " << c << std::endl;
+    std::cout << "++c = " << ++c << std::endl;     // Pre-incremento
+    std::cout << "c++ = " << c++ << std::endl;     // Post-incremento
+    std::cout << "c = " << c << std::endl;
+
+    std::cout << "--c = " << --c << std::endl;     // Pre-decremento
+    std::cout << "c-- = " << c-- << std::endl;     // Post-decremento
+    std::cout << "c = " << c << std::endl;
+
+    std::cout << "\nFunciones min / max:" << std::endl;
+    Fixed d(3.3f);
+    Fixed e(9.9f);
+    std::cout << "d = " << d << ", e = " << e << std::endl;
+    std::cout << "min(d, e) = " << Fixed::min(d, e) << std::endl;
+    std::cout << "max(d, e) = " << Fixed::max(d, e) << std::endl;
+
+    const Fixed f(42.42f);
+    const Fixed g(42.43f);
+    std::cout << "min(f, g) [const] = " << Fixed::min(f, g) << std::endl;
+    std::cout << "max(f, g) [const] = " << Fixed::max(f, g) << std::endl;
+
     return 0;
 }
-
-// int main( void ) {
-// 	Fixed a;
-// 	Fixed const b( 10 );
-// 	Fixed const c( 42.42f );
-// 	Fixed const d( b );
-
-// 	a = Fixed( 1234.4321f );
-
-// 	std::cout << "a is " << a << std::endl;
-// 	std::cout << "b is " << b << std::endl;
-// 	std::cout << "c is " << c << std::endl;
-// 	std::cout << "d is " << d << std::endl;
-
-// 	std::cout << "+ operator : " << (b + d) << std::endl;
-// 	std::cout << "- operator : " << (b - c) << std::endl;
-// 	std::cout << "* operator : " << (b * c) << std::endl;
-
-// 	if (c < b)
-// 		std::cout << "c lower than b" << std::endl;
-// 	else
-// 		std::cout << "c greater than b" << std::endl;
-// 	if (b == d)
-// 		std::cout << "b equal d" << std::endl;
-// 	else
-// 		std::cout << "b different d" << std::endl;
-// 	std::cout << a << " " << ++a << std::endl;
-// 	std::cout << Fixed::min(b, c) << std::endl;
-// 	std::cout << Fixed::max(b, c) << std::endl;
-// 	return 0;
-// }
