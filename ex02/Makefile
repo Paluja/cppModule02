@@ -6,13 +6,15 @@
 #    By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 14:18:02 by pjimenez          #+#    #+#              #
-#    Updated: 2024/12/14 16:26:02 by pjimenez         ###   ########.fr        #
+#    Updated: 2025/05/15 13:45:50 by pjimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex02
 
 SRC = main.cpp Fixed.cpp
+
+HEADERS = Fixed.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -21,7 +23,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(HEADERS)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
