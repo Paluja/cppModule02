@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 13:54:33 by pjimenez          #+#    #+#             */
-/*   Updated: 2025/05/15 13:49:07 by pjimenez         ###   ########.fr       */
+/*   Updated: 2025/05/27 11:37:37 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Fixed
 {
     private:
-        int vale;
+        int value;
         static const int    bits = 8;
     public:
         Fixed();
